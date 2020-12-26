@@ -1,0 +1,435 @@
+* {
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --primary: #035982;
+    --secondary: rgb(125,225,225);
+    --dark: rgba(50,50,50,.8);
+    --success: green;
+    --success2: rgba(0,255,0,.2);
+    --black: #000000;
+    --clear-black: rgba(0,0,0,.4);
+    --dark-clear-black: rgba(0,0,0,.7);
+    --one: rgb(255,255,255);
+    --two: rgb(220,220,220);
+    --clear-white: rgba(255,255,255,.9);
+    --clear: rgba(255,255,255,.4);
+    --danger: red;
+    --grey :#403C3D;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin:0;
+    padding:0;
+}
+a:hover {
+    color:var(--secondary);
+    text-decoration: solid underline;
+}
+header {
+    width:100vw;
+    height: 60px;
+    margin: 0 ;
+    padding: 0;
+    position: fixed;
+    top:0;
+    line-height:50px;
+    background-color: var(--clear-black);
+    z-index:80;
+ }
+ .navbar {
+    width: 90%;
+    height:100%;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+}
+.logo {
+    color:var(--one);
+    font-size:40px;
+    position: relative;
+    font-weight: 900;
+    margin-bottom:0;
+}
+#myButton {
+    background-color: transparent;
+    padding: 1em .6em;
+    border: none;
+    outline: none;
+    float:right;
+    position: relative;
+    top:1em;
+    transition-delay: 250ms ease-in-out;
+    display: none;
+}
+.hamburger {
+    position: relative;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display:block;
+    width:25px;
+    height:3px;
+    background:var(--one);
+    content: '';
+    transition: all 250ms ease-in-out;
+}
+.hamburger::before {
+    position:absolute;
+    top:7px;
+}
+.hamburger::after {
+    position:absolute;
+    top:-7px;
+}
+/************** nav open **************/
+.nav_open .nav_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: -50px;
+    background-color: var(--black);
+}
+.nav_open header {
+    z-index:99;
+}
+.nav_open #myButton {
+    background-color: var(--one);
+}
+.nav_open .hamburger {
+    background-color: transparent;
+}
+.nav_open .hamburger:before {
+    top:0;
+    transform: rotate(45deg);
+    background-color: var(--danger);
+}
+.nav_open .hamburger:after {
+    top:0;
+    transform: rotate(-45deg);
+    background-color: var(--danger);
+}
+.nav_items {
+    float:right;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    transition-delay: 300ms ease-in-out ;
+}
+.nav_item {
+    margin: 0 .3em;
+}
+.nav_link {
+    font-size:1.5em;
+     color: var(--one);
+     font-weight: 800;
+     padding: 0;
+     transition: all 250ms ease-in-out;
+}
+.nav_link_con  {
+    padding: .4em .8em;
+    background-color: var(--primary);
+    font-size: large;
+    color:var(--one);
+    font-weight: 900;
+    border-radius: 1em;
+    transition: all 400ms ease-in-out;
+}
+.nav_link_con:hover {
+    background-color: transparent;
+}
+
+/************* Background Image *********************/
+
+#background {
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    top:0;
+    z-index: -1;
+}
+.back_image {
+    width:100%;
+    height:100%;
+    z-index: inherit;
+    object-fit: cover;
+}
+
+/************* welcome section ***********************/
+
+#welcome {
+    width:100vw;
+    height:100vh;
+    top:0;
+    background-color: var(--dark-clear-black);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    padding:0;
+}
+.welcome_message {
+    font-size:4em;
+    color:var(--one);
+    font-weight: 900;
+    margin-top:0;
+}
+.welcome_message span {
+    color:var(--secondary);
+}
+.button_wrapper {
+    margin: 1em 0;
+    padding: 1em 0;
+}
+#top_button {
+    font-size:2em;
+    color: var(--one);
+    background-color:var(--primary) ;
+    font-weight: 600;
+    outline:none;
+    border:none;
+    padding: .5em 1em;
+    margin-right: .5em;
+    border-radius: .3em;
+    transition: background 250ms ease-in-out;
+
+}
+#top_button:hover {
+    background-color: var(--dark-clear-black);
+}
+#top_button2 {
+    font-size:2em;
+    color: var(--primary);
+    background-color:var(--one) ;
+    font-weight: 600;
+    outline:none;
+    border:none;
+    padding: .5em 1em;
+    margin-right: .5em;
+    border-radius: .3em;
+    transition: background color 250ms ease-in-out;
+}
+#top_button2:hover {
+    background-color: var(--success2);
+    color: var(--secondary);
+}
+.social_media {
+    margin-top:1em;
+    text-align: center;
+    padding:0;
+    position: relative;
+}
+.sociale {
+    color:var(--one);
+    font-size:1.5em;
+    margin-bottom:1em;
+}
+.social_icon {
+    font-size: 3em;
+    color:var(--secondary);
+    margin: 0 .3em;
+    padding: .3em .5em;
+    position: relative;
+    transition: 250ms ease-in-out;
+}
+.social_icon:hover {
+    color:var(--success);
+    background-color: var(--one);
+}
+
+/************* Login section ************************/
+.login_div #login ,.signUp_div #sign_up{
+    width:100vw;
+    position: absolute;
+    top:0;
+    padding-top: 60px;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+}
+.login_div #login {
+    padding-bottom: 3em;
+}
+.login_div .second_btn {
+   display: block;
+}
+.signUp_div .x_button {
+    display:block;
+}
+.login_div header {
+    z-index: 99;
+}
+.login_div .m_hamburger, .signUp_div .x_hamburger {
+    background:transparent;
+}
+
+#login,#sign_up {
+    display: none;
+}
+.login_header {
+    font-size: 1.5em;
+    color: var(--clear-white);
+    margin-bottom: 2em;
+}
+.login_form {
+    padding: 2em 1em .5em 1em;
+    background-color: var(--success2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 2em;
+    border: 3px solid var(--success);
+}
+.form_elements {
+    padding: 0;
+    margin:0 0 1em 0;
+    position: relative;
+    line-height: 1.5em;
+    border-bottom: 3px solid var(--success);
+    border-radius: 1em;
+}
+.form_label {
+    color:var(--secondary);
+    font-size: 1.5em;
+    margin:0;
+    padding:0;
+    position: absolute;
+    top: .55em;
+    left:.5em;
+}
+.form_input {
+  width: 400px;
+  padding: 0 1em;
+  position: relative;
+  text-align: right;
+  background-color: inherit;
+  color: var(--two);
+  font-size: 1.5em;
+  height: 2.3em;
+  outline: none;
+  border:none;
+}
+.form_button {
+    font-size: 1.5em;
+    color:var(--two);
+    background-color: var(--primary);
+    border: none;
+    outline:none;
+    padding: .5em 1em;
+    position: relative;
+    left:0;
+    border-radius: .5em;
+    margin-top: 1em;
+}
+
+
+/************* Sign up section **********************/
+
+
+
+/************* Footer section ***********************/
+
+.x_button {
+    position: absolute;
+    bottom: 5em;
+    right:5em;
+    background-color: var(--two);
+    cursor:pointer;
+    padding: 1.5em 1em;
+    display:none;
+}
+.second_btn {
+    position: absolute;
+    bottom: 5em;
+    right:5em;
+    background-color: var(--two);
+    cursor:pointer;
+    padding: 1.5em 1em;
+    display:none;
+}
+.x_hamburger {
+    position:relative;
+    top:0;
+}
+.x_hamburger,
+.x_hamburger:before,
+.x_hamburger:after {
+    content:'';
+    background-color: var(--danger);
+    width: 25px;
+    display:block;
+    height: 2px;
+}
+.x_hamburger:before {
+    position: absolute;
+    top:0;
+    transform: rotate(45deg);
+}
+.x_hamburger:after{
+    position: absolute;
+    top: 0;
+    transform: rotate(-45deg);
+}
+.m_hamburger {
+    position:relative;
+    top:0;
+}
+.m_hamburger,
+.m_hamburger:before,
+.m_hamburger:after {
+    content:'';
+    background-color: var(--danger);
+    width: 25px;
+    display:block;
+    height: 2px;
+}
+.m_hamburger:before{
+    position: absolute;
+    top:0;
+    transform: rotate(45deg);
+}
+.m_hamburger:after{
+    position: absolute;
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+ /*********** Responsive design *************/
+
+ @media screen and (max-width:960px) {
+    #myButton {
+        display:block;
+    }
+    .nav_items {
+        display:none;
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+
